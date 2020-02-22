@@ -9,16 +9,20 @@ class Counter extends Component{
   }
 // this is where all the methods go
 increment = () => {
-
+if(this.state.count < 20){
   this.setState({
     count: this.state.count + 1,
+
  })
+}
 }
 
 decrement = () => {
- this.setState({
-    count: this.state.count - 1,
- })
+  if(this.state.count > 0){
+    this.setState({
+      count: this.state.count - 1,
+   })
+  }
 }
 clear = () => {
   this.setState({
@@ -26,9 +30,11 @@ clear = () => {
 })
 }
 doubleCount = () => {
-  this.setState({
-    count: this.state.count + 2,
- })
+  if(this.state.count < 20){
+    this.setState({
+      count: this.state.count + 2,
+   })
+  }
 }
 
   render(){
